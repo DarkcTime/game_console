@@ -48,10 +48,21 @@ def win_to_json(enemy):
     json_data = json.load(f)
     f.close()
     
+    for it in enemy.items: 
+        print(f"получен {it} \n")
+        json_data['character']['items'].append(it)
+        win_item = json_data['items'][it]
+        json_data['character']['hp'] = json_data['character']['hp'] + win_item['hp']
+        json_data['character']['damage'] = json_data['character']['damage'] + win_item['damage']
+
+    print(f"получено {enemy.money} монет")
     json_data['character']['money'] = json_data['character']['money'] + int(enemy.money)
+
     #косяк (поправить)
-    json_data['character']['items'].append(enemy.items)
+    
     json_data['character']['hp'] = json_data['character']['hp'] + int(enemy.money)
+
+    print(f"получено ")
 
     f = open('game.json', 'w', encoding='UTF8')
     json.dump(json_data, f, sort_keys=False, indent=4,ensure_ascii=False, separators=(',',': '))

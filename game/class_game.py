@@ -12,3 +12,11 @@ class Arm(object):
         self.hp = hp
         self.damage = damage
         self.cost = cost
+
+class Enemy(object):
+    def __init__(self, name, hp, damage, money, items):
+        self.name = name
+        self.hp = hp
+        self.damage = damage
+        self.money = money
+        self.items = items

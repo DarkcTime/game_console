@@ -16,7 +16,16 @@ def print_shop_menu(list_arms):
     print_menu(shop_menu_options)
 
 def print_buy_menu():
-    print(buy_menu_options)
+    print_menu(buy_menu_options)
+
+def print_battle_menu():
+    print(battle_menu_options[0])
+
+def print_battle_win():
+    print(win_menu_options[0])
+
+def print_battle_wasted():
+    print(wasted_menu_options[0])
 
 first_menu_options = {
     1: 'Посмотреть характеристики',
@@ -31,3 +40,16 @@ buy_menu_options = {
     1: 'Купить', 
     2: 'Свалить из магазина'
 }
+
+battle_menu_options = [
+    'Сразиться'
+]
+
+win_menu_options = [
+    'Вернуться в главное меню'
+]
+
+
+wasted_menu_options = [
+    'Закончить игру'
+]
